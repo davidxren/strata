@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "strata"
+version = "0.1.0"
+description = "A storage engine for sensor time series. Python, standard library only."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "David Ren" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis", "ruff", "mypy"]
+bench = ["numpy", "pyarrow"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["strata"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["strata", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
