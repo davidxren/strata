@@ -1,3 +1,23 @@
+# Contract for strata/bits.py, MSB-first over a Python int accumulator:
+#
+#   class BitWriter:
+#       def __init__(self) -> None
+#       def write_bit(self, bit: int) -> None
+#           bit is 0 or 1, else ValueError
+#       def write_bits(self, value: int, width: int) -> None
+#           1 <= width <= 64 and 0 <= value < 2**width, else ValueError
+#       def to_bytes(self) -> bytes
+#           the last byte is padded with zero bits on the right
+#
+#   class BitReader:
+#       def __init__(self, data: bytes) -> None
+#       def read_bit(self) -> int
+#           EOFError once every bit, padding included, has been read
+#       def read_bits(self, width: int) -> int
+#           1 <= width <= 64 else ValueError; EOFError if fewer than width bits remain
+#       def at_end(self) -> bool
+#           True once every bit, padding included, has been read
+
 import pytest
 from hypothesis import given
 from hypothesis import strategies as st
