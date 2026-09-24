@@ -16,6 +16,9 @@ dependencies = []
 dev = ["pytest", "hypothesis", "ruff", "mypy"]
 bench = ["numpy", "pyarrow"]
 
+[project.scripts]
+strata = "strata.cli:main"
+
 [tool.hatch.build.targets.wheel]
 packages = ["strata"]
 
