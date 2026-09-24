@@ -31,3 +31,15 @@ Answer:
 ## 8. The handoff's gitignore entry `data/` is unanchored. What happens to a public sample checked in under tests/data/, and what is the one-character fix if that ever matters?
 
 Answer:
+
+## 9. Why are SQLite bytes per sample identical for constants and slow integers at small N, and what does page granularity do to any on-disk measurement?
+
+Answer:
+
+## 10. Why does gzip do almost as badly on a random walk of tiny steps as on random bits, and what does that say about when XOR compression wins?
+
+Answer:
+
+## 11. Why does SQLite store series ids 0 and 1 in zero bytes, and how did that skew the baseline before it was caught?
+
+Answer:
